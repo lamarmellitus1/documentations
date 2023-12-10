@@ -1,0 +1,12 @@
+id: 101
+name: mellitus
+gender: male
+role: devops engineer
+hubbies:
+  - music
+  - reading
+  - dancing
+job:
+  - company name: fasyl
+  - exp: 5yrs
+  - level: senior 

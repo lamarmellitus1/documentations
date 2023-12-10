@@ -1,0 +1,28 @@
+[defaults]
+inventory = /etc/ansible/hosts
+remote_user = ansible
+private_key_file = /home/ansible/.ssh/id_rsa
+forks = 5
+poll_interval = 15
+sudo_user = root
+ask_sudo_pass = True
+ask_pass = True
+transport = ssh
+remote_port = 22
+
+[privilege_escalation]
+become = True
+become_method = sudo
+become_user = root
+become_ask_pass = True
+
+[paramiko_connection]
+
+[ssh_connection]
+pipelining=True
+
+[accelerate]
+accelerate_port=5099
+accelerate_timeout=30
+
+[selinux]

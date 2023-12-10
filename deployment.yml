@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javawebappoddeployment
+spec:
+  replicas: 2
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: javawebapp
+  template:
+    metadata:
+      name: javawebappod
+      labels:
+        app: javawebapp
+    spec:
+      containers:
+      - name: javawebcontainers
+        image: ashokit/javawebapp
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: javawebsvc
+spec:
+  type: NodePort
+  selector: 
+    app: javawebapp
+  ports:
+  - port: 80
+    targetPort: 8080
+    NodePort: 30703
+...

@@ -1,0 +1,1379 @@
+========================================
+Module-1 Summary : Introduction To DevOps
+========================================
+
+1) What is DevOps ?
+
+2) Why DevOps ?
+
+3) DevOps Tools Overview
+
+4) DevOps Engineer Roles & Responsibilities
+
+5) DevOps Lifecycle
+
+6) What is SDLC ?
+
+7) What is Waterfall Methodology ?
+
+8) What is Agile Methodology ?
+
+===============================
+Module - 2 : Linux Operating System
+===============================
+
+1) What is Operating System
+
+-> It acts as mediator between user and computer hardware components
+
+-> For every computer OS is mandatory
+
+-> We can't use computer when there is no OS in that
+
+Ex : Windows OS, Linux OS, MAC OS, Android OS , IOS 
+
+
+============
+Windows OS
+===========
+
+-> Developed by Microsoft company
+
+-> It is commercial Operating System (We need to purchase license to use)
+
+-> It is single user based OS (only one person can access at time)
+
+-> It is providing GUI (Graphical user interface )
+
+-> Anti Virus Software is required to protect our files from Virus
+
+-> Windows is highly recommended for personal use
+
+	Ex: Browsing, Learning, Watching Movies, Playing Games etc...
+
+
+
+=========
+Linux 
+=========
+
+-> It is free and Open source Operating System
+
+-> It is multi user based Operating System.
+
+-> It is very secured Operating System
+
+-> Linux is Virus Free
+
+-> Linux is CLI Based (Commandline Interface)
+
+-> Linux is highly recommended for business purposes like managing infrastructure & servers
+
+=============
+Linux History
+=============
+
+-> Linux OS Developed by Linus Torvalds in 1991
+
+-> Linus Torvalds found some challenges in Unix OS and he  told to that company to make changes in UNIX OS but Unix company not accepted Linus Torvalds suggestions.
+
+-> Linus Torvalds realized and he started developing his own Operating System i.e Linux OS
+
+-> Linus Torvalds used Minux OS to develop new Operating System.
+
+				( Li ) nus  + Mi (nux)  ==> Linux
+
+-> Linus Torvalds relased Linux OS and its source code into market for free of cost.
+
+=> Several Companies downloaded Linux OS source code and modified according to their requirement and released into market with new names they are called as Linux Distrubutions / Linux Flavours.
+
+				1) Amazon Linux
+				2) Ubuntu OS
+				3) CentOS
+				4) RED HAT OS
+				5) Debian
+				6) Fedora
+				7) SUSE etc...
+
+Note: We have 200+ Linux distributions in the market.
+
+
+
+=================
+Environment Setup
+================
+
+1) Create Free Tier Account in AWS Cloud (1 year free)
+
+2) Create Linux Virtual Machine (VM) in AWS using EC2 service
+
+3) Connect to Linux VM from Windows Machine using MobaXterm / Putty Software
+
+4) Once we connected to Linux VM then we can practise Linux Commands.
+
+
+==========================
+Working with Linux Commands
+==========================
+
+whoami :  To print logged in username
+
+date :  to print today's date
+
+cal :  to display calender
+
+pwd : to display present working directory
+
+ls :  To list files and directories  ( -ltr options we can use)
+
+		$ ls -l   (To display present working directory content)
+
+		$ ls -l  <dirname>  (To display given directory content)
+
+mkdir : To create a new directory
+
+		$ mkdir <dirname>
+
+rmdir : To remove empty directory
+
+		$ rmdir <dirname>
+
+touch :  To create empty file
+
+		$ touch linux.txt aws.txt devops.txt
+
+rm : To remove file
+
+		$ rm <filename>  (it will delete given file)
+
+		$ rm -r <dirname>   (to delete non-empty directories)
+
+cat :  Create file with data + Print file data + Append data to existing file
+
+			$ cat  >  f1.txt   (create new file with data)
+
+			$ cat f1.txt  (print file data)
+
+			$ cat >> f1.txt (append data to existing file)
+
+			$ cat f1.txt f2.txt > f3.txt (To copy multiple files data into single file)
+
+
+cp : To copy one file data to another file
+
+			$ cp  f1.txt  f2.txt
+
+
+cd : To change directory
+
+			$ cd <dirname>  (Going into that directory)
+			
+			$ cd ..  (come out from directory)
+
+
+wc : Word count
+
+			$ wc f1.txt
+
+Note :  It will give no.of lines, no.of words and no.of characters of given file data.
+
+
+tac : It is reverse of cat. (tac will print file data from bottom to top)
+
+			$ tac  f1.txt
+
+head : To get file data from top
+
+			$ head <filename>   ( It will print first 10 lines of data )
+
+			$ head -n 15 <filename> (it will print first 15 lines of data)
+
+
+tail : To get file data from bottom
+
+			$ tail <filename> (it will print last 10 lines data)
+
+			$ tail -n 20 (it will print last lines of data)
+
+
+diff : To find differents between two files
+		
+	
+			$ diff f1.txt f2.txt
+
+
+grep : Global Regular expression Print ( it is used for file search )
+	
+			$ grep 'devops' *  (It will search for devops keyword in all files in the pwd)
+
+			$ grep -i 'devops' * (It will search for devops keyword in all files  - case insensitive)
+
+			$ grep -i 'devops' data.txt ( To search for data in given file )
+
+
+============================
+Working with text editors ( VI )
+===========================
+
+vi : Visual Editor
+
+		$ vi <filename>   ==> It will open the file
+
+=> press 'i' to enter into insert mode
+
+=> press 'Esc' to come out from insert mode
+
+=>  press :wq to save and quit the file
+
+=> press :q! to close the file without saving changes
+
+===============
+SED command
+===============
+
+=> SED standas for Stream Editor
+
+=> This is command is used for substitution (replacement)
+
+=> Using SED command we can perform operations on the file without opening it.
+
+
+$ sed 's/Linux/Unix/' data.txt   (It will replace Linux with Unix and it will print on console, it won't modify original file data)
+
+$ sed -i 's/Linux/Unix/'  (it will replace Linux with Unix in original file)
+
+$  sed -i '12d' data.txt  (it will delete 12th line in original file)
+
+
+=============
+man command
+=============
+
+=> man command is used to get information about given command (documentation)
+
+$ man ls 
+
+$ man clear
+
+$ man head
+
+
+
+========================
+User Management in Linux
+=======================
+
+=> Linux is multi user based Operating System
+
+=> In one linux machine we can create multiple user accounts
+
+=> Mulitple users can connect with single linux machine at a time and they can perform Multi Tasking.
+
+
+Note: In every linux machine by default one 'root' account will be avilable (super account)
+
+=> When we launch Linux VM using Amazon Linux then we will get 'ec2-user' account by default.
+
+
+# To get user account infor we will use below command
+
+$ id <username>
+
+
+Note: For every user one home directory will be available in linux
+
+ec2-user :   /home/ec2-user
+
+ashok   :  /home/ashok
+
+john  : /home/john
+
+smith : /home/smith
+
+root : /root
+
+
+#Swtich to root user account
+
+$ sudo su    (it will switch to root account)
+
+$ sudo su -  (it will switch to root account & will point to root user home directory)
+
+$ exit  (to exit from user account)
+
+
+=========================
+Create new users & Groups
+=========================
+
+# Switch to root user
+$ sudo su -
+
+# Add new user
+$ sudo useradd <username>
+
+# Set password for user
+$ sudo passwd <username>
+
+# Display users created
+$ cat /etc/passwd
+
+# Switch User account
+$ su <username>
+
+# delete user
+$ sudo userdel <username>
+
+# Delete user along with user home directory
+$ sudo userdel <username> --remove
+
+# Display all groups available
+$ cat /etc/group
+
+Note: When we create new user then user + user group will be created.
+
+
+# Create new  Group
+$  sudo groupadd <groupName>
+
+# Adding user to group
+$ sudo usermod -aG <group-name>  <user-name>
+
+# Remove user from the group
+$ sudo gpasswd -d <username> <group-name>
+
+# Display users belongs to group
+$ sudo lid -g <group-name>
+
+# display user belongs to how many groups
+$ id <username>
+
+# Delete Group
+$ sudo groupdel <group-name>
+
+
+# How to change username
+$ usermod -l <login-name> <old-name>
+
+(or)
+
+$ usermod  -u UID <username>
+
+# How to change user pwd
+$ passwd <username>
+
+# Change group name
+$ groupmod -n <new-name> <old-name>
+
+=====================
+File Permissions in Linux
+=====================
+
+=> In Linux everything will be represented as a file
+
+=> To protect our data we need to manage file permissions
+
+=> We have 3 types of permissions for the files in linux
+
+			r ===> read
+
+			w ===> write
+
+			x ===> execute
+
+=> Linux file permissions are divided into 3 sections
+
+		user-permissions + group-permissions + others-permissions
+
+				rwxrwxrwx   f1.txt
+
+				r--rwxrw-  f2.txt
+
+Note: 
+
+			first 3 characters will represent  user permissions ( rwx)
+			4,5,6 charcaters will represent group permissions(rwx)
+			last 3 characters will represent others permissions (rwx)
+
+=> If any permission is not available then it will represented with hypen ( - )
+
+
+
+-----------------
+scenario-1
+-----------------
+rw-r----x    f3.txt :   
+
+user : read + write
+
+group : read
+
+others : execute
+
+-----------------
+scenario-2
+-----------------
+-w--w-rwx  f4.txt
+
+user : write
+
+group : write
+
+others : read + write + execute
+
+-----------------
+scenario-3
+-----------------
+-rw---xr--  f5.txt
+
+user : read + write
+group : execute
+others : read
+
+-----------------
+scenario-4
+-----------------
+---xr-x---  f6.txt
+
+user : execute
+
+group:  read + execute
+
+others:  no permissions
+
+
+=> To change file permissions we will use 'chmod' command
+
+
+# adding execute permission for user
+
+$  chmod u+x  f1.txt
+
+# removing write permission for group
+
+$  chmod g-w f2.txt
+
+# remove write & execute for user
+
+$  chmod u-wx f3.txt
+
+# add write & execute for others
+
+$ chmod o+wx f4.txt
+
+
+====================================================
+File Permissions can be represented in Numeric format also
+====================================================
+
+7 -  read + write + execute ( 4 + 2 + 1)
+
+6 - read + write  (4 + 2)
+
+5 - read + execute  ( 4 + 1)
+
+4 - read 
+
+3 -  write + execute  (2 + 1)
+
+2 - write
+
+1 - execute
+
+0 - no permission
+
+
+
+Note: If we give single numeric value it will consider for others permissions
+
+	   if we give two numeric values it will consider group + others permissions
+
+	   if we give three numeric values it will consider  user + group + others permissions
+
+
+===============
+chown command
+==============
+
+=> It is used to change file ownership
+
+=> We can see file owner using ls -l command
+
+# change owner of  a file using username
+$ sudo chown <uname> <file>
+
+# change owner of  a file using userid
+$ sudo chown <UID> <file>
+
+
+Note: We can get userid of the user using 'id' command
+$ id <username>
+
+
+# change group of  a file
+$ sudo chown :<groupName> file
+
+
+
+Q) What is the difference between cdmod and chown ?
+Ans)   chmod is used to change file permissions & chown is used to change owner / group of a file
+
+
+
+====================
+find & locate commands
+====================
+
+=> find and locate commands are used for file location search in linux.
+
+
+=> locate command will search in locate database. It will use mlocate database to cache data.
+
+=> find command will search in entire linux file system.
+
+# search for the files which contains name 'apache'
+$ locate apache
+
+# Get file count which contains name 'apache'
+$ locate -c apache
+
+# find the file location using 'find' command
+$ sudo find  /home -name f2.txt
+
+# find all the empty files available inside /home directory
+$sudo find /home -type f -empty
+
+# find all the empty directories available inside /home directory
+$sudo find /home -type d -empty
+
+# Display 30 days old files in linux
+$ sudo find . -mtime 30 -print
+
+# Delete 30 days old files in linux inside home directory
+$ sudo find /home -mtime 30 -delete
+
+# Delete 1 hour old files in linux 
+$ sudo find /home -mmin +60 -delete
+
+
+=====================
+Networking Commands
+====================
+
+=> ifconfig : This command is used to get ip address of our machine
+
+		$ ifconfig
+
+=> ping : ping command is used to check connectitity 
+
+		$ ping <server-ip / url>
+
+Note: 0% packet loss means connectitity success. 100% packet loss means connectivity failed.
+
+=> wget : It is used to download a resource from internet using URL
+
+Syntax:		$ wget <url>
+
+Example : 	$ wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz
+
+=> curl : It is used to send request to an URL
+
+		$ curl <url>
+
+
+================================Check Linux Version =========================
+# How to check Linux Version
+$ cat /etc/os-release
+
+# How to check Linux Kernel Version
+$ uname -r
+
+=================================
+Softwares Installation in Linux Machine
+=================================
+
+=> In Windows, we can open browser and we can download and install required softwares
+
+=> In Linux, we have to install softwares using CLI 
+
+=> In Linux, we have package managers to install / un-install required softwares
+
+=> We have several package managers in Linux 
+
+		1) yum
+		2) apt
+		3) deb
+		4) rhel 
+
+=>  Based on Linux distribution, we need to use package manager.
+
+		Amazon Linux / Red HAT / Cent OS ====> yum
+
+		Ubuntu / Debian  ====> apt
+
+Note: Package manager will install software based on given package name
+
+# install git client
+$ sudo yum install git
+
+# install java
+$ sudo yum install java
+
+# Install java 1.8v
+$ sudo yum install java-1.8.0-openjdk
+
+#install maven
+$ sudo yum install maven
+
+
+
+=================================
+
+
+================
+Linux File System
+===============
+
+bin
+root
+lib
+usr
+var
+srv
+home 
+etc
+opt
+......
+
+=================
+Linux archiecture
+=================
+
+1) Applications / Users
+
+2) Shell
+
+3) Kernel
+
+4) Hardware Components
+
+
+=> Shell will act as mediator between users and kernel. Shell is responsible to convert user operations into kernel understandable format.
+
+=> Kernel is responsible to communicate with System hardware components.
+
+
+========= ðŸ”¥ *SHELL SCRIPTING Classes* ðŸ”¥============
+
+ðŸ‘‰ Session-1 : https://youtu.be/3Dtsa_-lf78
+
+ðŸ‘‰ Session-2 : https://youtu.be/fVE5hRBvkfQ
+
+ðŸ‘‰ Session-3 : https://youtu.be/4lIPHNKo28A
+
+===================================================
+
+
+============
+What is Shell ?
+============
+
+=> It will read commands given by user
+
+=> Shell will verify user command and it will give instructions to kernel
+
+Note: If we execute invalid command then shell will give error
+
+=> Shell will act as mediator between user and kernel
+
+=================
+What is Scripting ?
+=================
+
+=> Scripting means set of commands kept in  a file for execution
+
+=> Scripting is used to automate our daily tasks
+
+=>  shell script file will have .sh extension (filename can be anything)
+
+			
+		Ex:  backup.sh
+
+		Ex: task.sh
+
+		Ex: deploy.sh
+
+
+Note: We are using shell to execute our script file that is called as "Shell Scripting".
+
+=> Shell Scripting is used to automate our manual works
+
+	Ex: Taking Backup
+	
+	       Health checks
+
+	      Performing tasks
+
+===============
+Types of Shells
+==============
+
+1) Bourne Shell
+
+2) Bash Shell
+
+3) Korn Shell
+
+4) CShell
+
+5) TShell
+
+# Display list of shells availabe in Linux Machine
+
+$ cat /etc/shells
+
+# display default shell of our linux machine
+
+$ echo $SHELL
+
+
+=================================
+Working with First Shell Script Program
+=================================
+
+1) Create a script file using 'vi' command
+
+$ vi task.sh   (Enter insert mode  'i' )
+
+echo 'Script Execution Started'
+whoami
+pwd
+date
+ls -l
+echo 'Script Execution Ended'
+
+2) Save the file and close it ( Esc + :wq )
+
+3) Run shell script file using below options
+
+Option-1 :   $ sh task.sh
+
+Option-2 :  ./task.sh
+
+=================================
+What is SHA-BANG in shell scripting ?
+=================================
+
+=> sha-bang is used to specify which shell we want to use to process our script file.
+
+Syntax:
+
+#! /bin/bash
+
+
+========================= Script - 2 ==================
+
+#! /bin/bash/
+
+echo 'Welcome to Linux'
+echo 'We are discussing Shell Scripting'
+echo 'It is very important to automate daily tasks'
+echo 'It is favourite topic in interviews'
+
+======================== Script - 3 ======================
+
+#! /bin/bash
+
+echo 'Enter Your Name'
+read name
+echo "Good Morning $name"
+
+========================= Script - 4 ==========================
+
+#! /bin/bash
+
+echo 'Enter First Number'
+read a
+
+echo 'Enter Second Number'
+read b
+
+c=$((a+b))
+
+echo "Sum of $a and $b is $c"
+
+
+===========
+Variables
+===========
+
+=> Variables are used to store the values
+
+				id=101
+				name=ashok
+				gender=male
+
+=> Variables will represent data in key-value pair
+
+=> Variables are divided into 2 types
+
+			1) Environment Variables / System Variables
+			2) User Defined variables
+
+
+=> The variables which are using by our System are called as Environment / System variables.
+
+			> echo $HOSTNAME
+			> echo $NAME
+			> echo $SHELL
+
+
+=> The variables which we are creating based on our requirement those are called as user-defined variables
+
+				course=devops
+				duration=4 months
+
+===================
+Variable Name Rules
+==================
+
+=> Variable Name should n't start with digit
+
+=> We can't use special symbols like @, # etc...
+
+=> Recommended to use Uppercase characters for variable name
+
+
+======================
+Command Line Arguments
+======================
+
+=> CMD Args are used to supply the values while running script file
+
+	
+	ex:        sh  task.sh   10 20
+
+
+=> We can read command line args in script file like below
+
+$#  ===> No.of args
+
+$0 ===> Script file name
+
+$1  ===> First cmd args
+
+$2  ===> Second cmd args
+
+$3  ===> Third cmd args
+
+$*  ===> All Cmd Args
+
+
+
+========================== cmdargs.sh ================
+#! /bin/bash
+
+echo $#
+
+echo $0
+
+echo $1
+
+echo $2
+
+echo $*
+
+==== Execution  :  sh cmdargs.sh ashok it ====================
+
+==================
+Comments in Script
+==================
+
+
+=> To comment any single line we can use '#' character. Commented lines will not be executed.
+
+		# echo 'hi'
+
+=> We can comment multiple lines also in script using below syntax
+
+	<<COMMENT
+
+			....
+
+	 COMMENT
+
+
+======================
+Conditional Statements
+=======================
+
+=> These are used to execute commands based on condition
+
+		a = 10;
+
+		b = 5;
+
+	Ex:  if  a value is greaterthan b value then print "hi" message otherwise print "hello" message.
+
+------------
+Syntax:
+-------------
+if [condition]
+
+then
+	stmts
+
+elif [condition]
+
+then
+	stmts
+else
+	stmts
+
+================================== conditionalstmts.sh =======================================
+
+----------------------
+Example - 1 
+---------------------
+
+#!/bin/sh
+
+a=10
+b=20
+
+if [ $a == $b ]
+then
+   echo "a is equal to b"
+elif [ $a -gt $b ]
+then
+   echo "a is greater than b"
+elif [ $a -lt $b ]
+then
+   echo "a is less than b"
+else
+   echo "None of the condition met"
+fi
+
+---------------
+Example-2
+--------------
+
+#! /bin/bash
+
+echo 'enter color name'
+
+read COLOR
+
+if [ $COLOR == 'RED' ]
+then
+ echo "your favorite is red"
+elif [ $COLOR == 'BLUE' ]
+then
+ echo "your favorite is blue"
+elif [ $COLOR == 'YELLOW' ]
+then
+ echo "your favorite is yellow"
+else
+  echo "No Favorite color"
+fi
+
+
+========================
+Looping Statements
+=======================
+
+ =>   Looping Statements : These are used to execute commands multiple times.
+
+		Ex: print "hello" 20 times
+		       print numbers 1 to 10
+
+
+========================= loops.sh ==========================
+
+------------------------------------------------
+Example-1 : print hi msg 10 times
+------------------------------------------------
+#! /bin/bash
+
+for ((i=1; i<=10; i++))
+do
+        echo "hi"
+done
+
+------------------------------------------------
+Exampe-2 : Print numbers 1 to 10
+----------------------------------------------
+#! /bin/bash
+
+for((i=1; i<=10;i++))
+do
+        echo "$i"
+done
+
+
+
+
+=================
+Two Types of Loops
+=================
+
+1) Range Based Loop
+
+	Ex: for loop
+
+Ex:
+
+#! /bin/bash/
+
+for((i = 1; i <=10; i++))
+do
+echo $i
+done
+
+
+2) Conditional Based Loop
+
+	Ex: while loop
+
+
+Ex:
+
+#! /bin/bash
+
+i=10
+while [ $i -ge 1 ]
+do
+        echo "$i"
+let i--;
+done
+
+
+Note : ++ and -- are called as unary operators.
+
+++ (Increment Operator) : It is used to increase value of variable by 1
+
+-- (decrement operator): It is used to decrease value of variable y 1
+
+
+============
+Infinite Loops
+============
+
+=> The loop which will execute infinite times is called as Infinite loop. 
+
+=> Always condition is true to execute statements.
+
+#! /bin/bash/
+
+while true
+do
+echo "hi"
+done
+
+Note: To stop infinite loop execution we need to use "Ctrl + C"
+
+==================
+Functions / Methods
+==================
+
+=> Functions are used to perform some tasks
+
+=> Big tasks can be divided into smaller tasks using functions
+
+=> Functions are re-usable
+
+Note: Functions will not be called automatically. We have to call the function explicitley for execution.
+
+
+Syntax:
+
+function function-name ( ) {
+	  // function body
+}
+
+# call function
+function-name 
+
+=================================functiondemo.sh=====================================
+
+#! /bin/bash/
+
+
+function welcome(){
+
+        echo "Welcome to functions";
+        echo "Functions are used to perform tasks";
+        echo "Functions are re-usable";
+}
+
+#calling functions using its name
+welcome
+
+==================================================================================
+
+#! /bin/bash/
+
+function numbersum(){
+
+    echo "Enter first Number"
+    read a
+    echo "Enter second number"
+    read b
+
+    echo $((a+b))
+
+}
+
+# calling function
+numbersum
+
+======================================================================================
+
+Requirement : Write a function which will take filename as input and print content of that file.
+
+#! /bin/bash/
+
+function readFileData(){
+
+   echo "Enter File Name"
+   read filename
+   cat $filename
+
+}
+
+readFileData
+
+======================================Check File exist ================================
+
+
+#!/bin/bash
+filename=$1
+if [ -f "$filename" ];
+then
+echo "File exists"
+else
+echo "File does not exist hence creating file"
+touch $filename
+echo "File Created"
+fi
+======================================Check Directory exist =====================================
+
+#! /bin/bash
+
+dirname=$1
+if [ -d "$dirname" ];
+then
+echo "Directory exist"
+else
+echo "Directory not exist hence creating directory"
+mkdir $dirname
+fi
+
+====================================== SendingEmail ================================
+
+# install sendmail package
+$ sudo yum install sendmail
+
+# create script like below
+
+#! /bin/bash/
+
+echo "Enter To Address"
+read to
+echo "Enter Subject"
+read subject
+echo "Enter Body"
+read body
+
+sendmail -s '$subject' '$to' <<< '$body'
+echo "Email Sent"
+
+# Execute script with root user permission
+$ sudo sh <scriptfile>
+
+=================================== Creating Zip File ============================
+
+# check zip is installed or not 
+
+$ zip --version
+
+Note: If not installed then install it
+
+# Create Files for Archieve as zip
+
+$ touch file{1..5}.txt
+
+# Create zip file
+$ zip files *.txt
+
+# List Zip File Content
+$ zip -sf files.zip
+
+# Add directory to zip file
+$ zip -r files <directory>
+
+# Delete particular file from zip 
+$ zip -d files f5.txt
+
+# Create zip file with encryption
+
+$ zip -e <zipfilename> *.txt
+
+# unzip archieved file
+$ unzip <zipfilename>
+
+=====================================================================
+
+# Check Disc space in Linux
+$ df -h
+
+# Check running processes in linux
+$ top or $ htop  or $ ps -aux
+
+# How to kill process in linux
+$ kill -9 <process-id>
+
+# How to check all logged in users in Linux
+$ w
+
+# check last reboot history
+$ last reboot
+
+========================================
+Hosting Static Website In Amazon Linux Machine
+========================================
+
+=>   Website ::: Collection of web pages is called as Website
+
+=>   To run website we need  a webserver. 
+
+=> WebServer is a software which is used to run webapplication / websites.
+
+Note: In Amazon Linux we can install httpd webserver. 
+
+=> Httpd webserver runs on 80 Port Number (we need to enable this is security group)
+
+
+############## Installing Httpd Webserver #################
+
+# Update existing packages in our Linux VM
+$ sudo yum update
+
+# Install HTTPD webserver
+$  sudo yum install httpd
+
+# Start HTTPD Service
+$ sudo service httpd start
+
+Note: Enable HTTP Protocol in EC2 VM Security Group => Inbound Rules ===> All Allow Traffic
+
+Access URL : http://ec2-vm-public-ip/
+
+Note: To edit content of web page execute below commands
+
+$ cd /var/www/html
+$ sudo vi index.html (write content and save it)
+
+
+==============================================================================================
+1) whoami
+2) pwd
+3) date
+4) cal
+5) ls
+6) mkdir
+7) rmdir
+8) touch
+9) cat
+10) tac
+11) head
+12) tail
+13) diff
+14) wc
+15) grep
+16) vi
+17) sed
+18) cp 
+19) rev
+20) rm
+21) cd 
+22) clear
+23) man
+24) history
+25) chmod
+26) chown
+27) locate
+28) find
+29) ifconfig
+30) ping
+31) wget
+32) curl
+33) useradd
+34) passwd
+34) userdel
+35) usermod
+36) groupadd
+37) groupdel
+38) groupmod
+39) id
+40) mv 
+41) lid
+42) gpasswd
+43) su
+44) logout
+45) zip
+46) unzip
+47) df
+48) top
+49) last reboot
+50) w
+51) echo
+52) read
+
+
+1) What is Shell ?
+2) What is Kernel ?
+3) What is shell scripting ?
+4) Variables
+5) Control Statements
+6) Looping Statements
+7) CommandLine Arguments
+8) Functions
+
+===========================================Assignment ===========================================
+
+1) Take a number from user and check given number is prime number or not.
+
+2) Take a number from user and check given number is even or odd number.
+
+3) Take a year from user and check given year is leap year or not.
+
+4) Take a number from user and print table of that number like below
+
+2 * 1 = 2
+2 * 2 = 4
+2 * 3 = 6
+....
+2 * 10 = 20;
+
+5) Write a shell script to read file name, check presence of that file in current working directory if file is not available then create that file with given name. If file already exist then display message as 'File Already Exist with given name'.
+
+6) Write a shell script to read directory name, check presence of that directory in current working directory if directory is not available then create that directory with given name. If directory already exist then display message as 'Directory Already Exist with given name'.
+
+7) Write a shell script to read user To address, mail subject and mail body then send email with given details.
+
+==================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+

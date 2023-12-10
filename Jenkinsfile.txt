@@ -1,0 +1,29 @@
+pipeline{
+    agent any
+    stages{
+        stage('Git Clone'){
+            steps{
+            echo "cloning the git repo the code"
+            }
+            
+        }
+        stage('Maven Build'){
+            steps{
+            echo "maven building the code"
+            }
+            
+        }
+        stage('Code Review'){
+            steps{
+            echo "code reviewing the code"
+            }
+            
+        }
+        stage('Maven Build'){
+            steps{
+            echo "maven building the code"
+            }
+            
+        }
+    }
+}

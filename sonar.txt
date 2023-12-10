@@ -1,0 +1,50 @@
+sonar token:
+6a9e27b7f9eb75e13dedd50a689573bfc9195042
+
+
+stage('sonarqube analysis'){
+environment{
+	scannerHome = tool 'mellitus-sonarube-scanner'
+}
+
+steps{
+withsonarQubeEnv('mellitus-sonar-server'){
+sh "${scannerHome}/bin/sonar-sonar"}
+}
+
+}
+
+
+
+       stage('Sonarqube Analysis'){
+            environment{
+	                scannerHome = tool 'mellitus-sonarqube-scanner'
+}
+
+        steps{
+                withSonarQubeEnv('mellitus-sonar-server'){
+                    sh "${scannerHome}/bin/sonar-sonar"}
+}
+
+}
+
+
+sonar.verbose=true
+sonar.organization=lamarkey
+sonar.projectKey=lamarkey_insta-app
+sonar.projectName=insta-app
+sonar.language=java
+sonar.sourceEncoding=UTF-8
+sonar.sources=.
+sonar.java.binaries=target/classes
+sonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+
+sonar.varbose=true
+sonar.organization=lamarkey
+sonar.projectkey=lamarkey_insta-app
+sonar.projectName=insta-app
+sonar.language=java
+sonar.sourceEncoding=UTF-8
+sonar.sources=.
+sonar.java.binaries-target/classes
+sonar.coverage.jacoco.xmlReportPaths=build/reports/jacoco/test/jacocoTestReport.xml

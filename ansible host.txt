@@ -1,0 +1,52 @@
+# This is an example of the inventory file for Ansible.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+## green.example.com
+## blue.example.com
+## 192.168.100.1
+## 192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+[webservers]
+172.31.31.154
+## alpha.example.org
+## beta.example.org
+## 192.168.1.100
+## 192.168.1.110
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+## www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+[dbservers]
+172.31.16.247
+#
+# To use a port number for one or more hosts you can specify it after
+# the hostname/IP address:
+#
+## sapphire.example.com:5432
+## topaz.example.com:5432
+## rhodium.example.com:5432
+
+# Here's another example of host ranges, this time there are no leading zeros:
+
+## db-[11:15].example.com
+
+# Ex 4: A collection of hosts with variable 'remote_user' values
+
+[targets]
+## host1 ansible_port=5555 ansible_user=testuser ansible_ssh_private_key_file=/etc/ansible/keys/mykey.pem
+## host2 ansible_port=5555 ansible_user=testuser ansible_ssh_private_key_file=/etc/ansible/keys/mykey.pem

@@ -1,0 +1,158 @@
+#########################
+AWS Introduction
+#########################
+
+-> AWS stands for Amazon Web services
+
+-> AWS cloud managing by Amazon company
+
+-> AWS is one of the leading Cloud Provider in the market
+
+-> AWS started providing IT resources over internet from 2006 onwards
+
+-> 190+ countries using AWS Cloud
+
+-> AWS providing 200+ Services
+
+-> AWS providing Cloud Services based on 'Pay As You Go' model
+
+
+
+=> Cloud Computing is the process of delivering IT resources over the internet based on demand.
+
+		Ex: Machines, Servers,  Database, Storage, Network, Security etc...
+
+=> Cloud Infrastructuer will be provided based on 'Pay As You Go' model.
+
+
+
+#############################
+Regions & Availability Zones
+#############################
+
+Regions means one geographical location
+
+Availability Zone means Data center.
+
+-> Every region will have multiple data centers
+
+-> In region, every data center will have 100km distance
+
+#########################
+AWS Services Tour
+#########################
+
+-> AWS offering 200+ service
+
+1) EC2 :  Elastic Compute Cloud
+
+		=> It is used to create Virtual machines in AWS cloud
+		=> We can create Windows / Linux / Mac machines
+
+		=> EC2 Instance = Computer / Machine / Server / VM / Virtual Machine
+
+2) EBS : Elastic Block Store
+
+		=> It provides storage for EC2 instances
+		=> For EC2 instance one EBS volume is mandatory
+		=> Without EBS volume, EC2 instance can't start
+
+3) S3 : Simple Storage Service
+
+		=> S3 is a file/object based storage
+		=> Unlimited Storage
+		=> S3 is not belongs to EC2
+
+4) RDS : Relational DB service
+
+		=> To setup Relational Databases in AWS Cloud
+
+			Ex: Oracle, MySQL, Postgres, SQL Server etc..
+
+	    => Relational DBs will store data in tables format
+
+			Ex : emp_id, emp_name, emp_salary
+
+
+5) VPC : Virtual Private Cloud
+
+		=> It provides network required for aws resources
+
+		=> Using VPC we can maintain isolated resources in AWS cloud
+
+		-> It provides security for Resources in AWS cloud
+
+
+6) Route 53 : DNS Mapping
+
+		=> It is used to map our applications to domain name
+
+				www.ashokit.in ===> 10.19.78.76
+
+
+7) IAM : Identity and Access Management
+
+		=> User creations
+		=> User Groups
+		=> User Roles
+		=> User Permissions
+
+		=> Which user should access which service in AWS can be defined using IAM.
+
+
+8) Elastic Beanstalk: It provides PaaS
+
+		=> End to end web application management
+		=> Just upload our code to run our application
+		=> It provides platform to run our applications
+		=> It supports several platforms like java, .net, python, php, node js, docker etc..
+
+				
+9) Cloud Watch : Monitoring Service 
+
+		=> It is used to monitor AWS resources & our applications
+
+
+10) Lambdas : Serverless computing
+
+		=> Run your code without thinking about server
+		=> AWS will take care of servers to run our application
+	
+		
+11) SES : Simple Email Service
+
+	SNS : Simple Notification Service
+
+	SQS : Simple Queue Service
+
+
+12) ECS : Elastic Container Service
+
+			=> To run Docker containers
+
+13) EKS : Elastic kubernetes Service
+
+			=> To run K8S cluster (control plane)
+
+
+14) Cloud Formation : IAAC
+
+			=> It is used for Infrastructure Provisioning
+
+
+
+=================================
+Create free tier account in AWS
+=================================
+
+
+
+
+
+
+
+
+
+
+
+

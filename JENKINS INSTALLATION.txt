@@ -1,0 +1,52 @@
+1.In Security group name, enter WebServerSG or any preferred name of your choice, and provide a description.
+
+Select your VPC from the list. You can use the default VPC.
+
+On the Inbound tab, add the rules as follows:
+
+a.Select Add Rule, and then select SSH from the Type list.
+
+Under Source, select Custom, and in the text box, enter the IP address from step 1, followed by /32 indicating a single IP Address. For example, 104.34.241.123/32 is a single IP address, while 198.51.100.2/24 results in a range of 256 IP addresses.
+
+b.Select Add Rule, and then select HTTP from the Type list.
+
+c.Select Add Rule, and then select Custom TCP Rule from the Type list.
+
+Under Port Range, enter 8080.
+
+d.Select Create.
+
+* ON THE UBUNTU MACHINE, CHANGE DIRECTORY TO ROOT AND RUN THE FOLLOWING COMMANDS
+
+1. curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+2.sudo apt-get update
+3.sudo apt-get install jenkins
+
+4. INSTALL JAVA JDR.
+$ sudo apt update
+$ sudo apt install openjdk-11-jre
+$ java -version
+
+ENABLE THE JENKINS
+sudo systemctl enable jenkins
+
+RUN THE JENKINS
+sudo systemctl start jenkins
+
+CHECK JENKINS STATUS
+sudo systemctl status jenkins
+
+IN THE JENKINS DASHBOARD
+copy the link and go to the terminal and cd to /var/lib/jenkins and cat the link..
+copy the password the link and paste in the jenkins
+
+
+
+http://18.206.120.253:8080/
+
+
+

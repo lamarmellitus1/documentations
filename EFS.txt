@@ -1,0 +1,95 @@
+==========================
+Elastic File System (EFS)
+==========================
+
+-> AWS EFS lets you create scalable file storage to be used on EC2. 
+
+-> You donâ€™t have to bother about capacity forecasting as it can scale up or down on-demand.
+
+===============================
+Some of the EFS advantages are:
+===============================
+
+1) Fully managed by AWS
+2) Low cost, pay for what you use
+3) Highly available & durable service
+4) Automatically scale up or down
+5) Scalable performance
+
+
+========================
+Steps to work with EFS
+========================
+=> Login into the AWS console
+=> Go to Services and select EFS under storage
+=> Click on â€œCreate file system.â€
+
+
+File System ID : fs-0bcfd6593eefaa8db
+
+
+=======================
+Mounting EFS on EC2
+======================
+
+# Login to EC2 instance and install the NFS client s/w
+
+$ sudo yum install -y amazon-efs-utils
+
+# Letâ€™s create a directory where you want to mount the EFS.
+
+$ sudo mkdir efsdir
+
+#  Mount EFS Filesystem (Make sure you changed FileSystem ID)
+$  sudo mount -t efs -o tls fs-092c57613c73815d9:/ efsdir
+
+Note: Make EC2 VM security Group inbound rule having "NFS" protocol with 2049 port number
+
+# Change the directory to the mount point that is created above using the command:
+
+$ cd efsdir
+
+# Create a new sub directory with following command:
+
+$ sudo mkdir begin
+
+# Change the permissions of the above subdirectory with the following command:
+
+# sudo chown ec2-user begin
+
+# Change the directory to begin directory with following command:
+
+$ cd begin
+
+# Create a sample text file:
+
+$ touch myfile.txt
+
+# Run ls command to list the contents of directory.
+
+============================================================
+Note: Create another ec2 instance and mount EFS file system 
+============================================================
+
+# Login to EC2 instance and install the NFS client
+
+$ sudo yum install -y amazon-efs-utils
+
+# Letâ€™s create a folder where you want to mount the EFS.
+
+$ sudo mkdir efsdir
+
+# Mount EFS Filesystem (Make sure you changed FileSystem ID)
+$ sudo mount -t efs -o tls fs-04d8542c8375991f3:/ efsdir
+
+# Change the directory to the mount point that is created above using the command:
+
+$ cd efsdir
+
+# check the files available
+
+$ ls 
+
+Note : The files we have created in First EC2 instance, should display in second ec2 instance.
+
+===================================================================================================

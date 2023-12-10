@@ -1,0 +1,24 @@
+RDS:
+password:
+iQVDKn5XmP8HJsRPVgQI
+endpoint:
+mellitus-it-rd.czzezpsl8agd.us-east-2.rds.amazonaws.com
+username:
+admin
+
+rabbitmq:
+uname: admin
+passwd: ghostnight123
+endpoint:  amqps://b-30ca0154-3b78-4ea6-9f8a-5585a76113e7.mq.us-east-2.amazonaws.com:5671
+
+elasticached endpoint:
+mellitus-it-memcached-svc.y67osk.cfg.use2.cache.amazonaws.com:11211
+
+mysql connection with the database:
+mysql -h <endpoint> -u<uname> -p<pswd>
+mysql -h mellitus-it-rd.czzezpsl8agd.us-east-2.rds.amazonaws.com -u admin -piQVDKn5XmP8HJsRPVgQI
+
+execute the table of the sql:
+mysql -h mellitus-it-rd.czzezpsl8agd.us-east-2.rds.amazonaws.com -u admin -piQVDKn5XmP8HJsRPVgQI mellitus_rd <db_backup.sql
+
+
